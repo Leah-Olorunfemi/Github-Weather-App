@@ -8,6 +8,34 @@
 //  When clicking on it, it uses the Geolocation API to get your GPS coordinates and
 //  display and the city and current temperature using the OpenWeather API.
 
+function formatDate() {
+  let appTime = new Date();
+  // console.log(appTime);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let dayDisplayed = days[appTime.getDay()];
+  // console.log(dayDisplayed);
+  let hourDisplayed = appTime.getHours();
+  if (hourDisplayed < 0) hourDisplayed = `0${hourDisplayed}`;
+
+  let minsDisplayed = appTime.getMinutes();
+  if (minsDisplayed < 10) minsDisplayed = `0${minsDisplayed}`;
+
+  return `${dayDisplayed} ${hourDisplayed} ${minsDisplayed}`;
+}
+
+let appTime = document.querySelector("#date");
+
+appTime.innerHTML = formatDate(appTime);
+
 function displayWeather(response) {
   let descriptionShown = document.querySelector("#wDescription");
   let axiosDescription = response.data.weather[0].main;
