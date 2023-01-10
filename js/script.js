@@ -29,7 +29,7 @@ function formatDate() {
   let minsDisplayed = appTime.getMinutes();
   if (minsDisplayed < 10) minsDisplayed = `0${minsDisplayed}`;
 
-  return `${dayDisplayed} ${hourDisplayed} ${minsDisplayed}`;
+  return `${dayDisplayed} ${hourDisplayed}:${minsDisplayed}`;
 }
 
 let appTime = document.querySelector("#date");

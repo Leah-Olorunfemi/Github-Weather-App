@@ -6,6 +6,11 @@
   margin-top: 20px;
 }
 
+h1 {
+  color: #7c7c7c !important;
+  padding-left: 20px;
+}
+
 .weather-app {
   display: block;
   margin: 0 auto;
@@ -17,9 +22,6 @@
 
 form {
   padding: 20px;
-}
-h1 {
-  padding-left: 20px;
 }
 
 .dater {
